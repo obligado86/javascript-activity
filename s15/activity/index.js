@@ -81,6 +81,7 @@ console.log("Hello World");
 	// lastLocation = "Atlantic Ocean";
 	console.log("I was found frozen in: " + lastLocation);
 
+console.log("hello World");
 
 //Do not modify
     //For exporting to test.js
