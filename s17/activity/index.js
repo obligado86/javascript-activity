@@ -21,7 +21,7 @@ function prinUserInfo() {
 	console.log("I have a cat named " + cat + ".");
 	console.log("I have a dog named " + dog + ".");
 }
-prinUserInfo();
+// prinUserInfo();
 
 /*
 	2. Create a function named printFiveBands which is able to display 5 bands/musical artists.
@@ -40,7 +40,7 @@ prinUserInfo();
 		console.log(faveBands[4]);
 	}
 
-	printMyFiveBands();
+	// printMyFiveBands();
 
 /*
 	3. Create a function named printFiveMovies which is able to display the name of 5 movies.
@@ -59,7 +59,7 @@ prinUserInfo();
 		console.log(faveMovies[4]);
 	}
 
-	printMyFiveMovies();
+	// printMyFiveMovies();
 
 /*
 	4. Debugging Practice - Debug the following codes and functions to avoid errors.
@@ -83,7 +83,7 @@ function printFriends(){
 	console.log(friend3); 
 };
 
-printFriends();
+//printFriends();
 
 /*console.log(friend1);
 console.log(friend2);*/
