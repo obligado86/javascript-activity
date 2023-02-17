@@ -225,10 +225,10 @@ let isLegalAge = true;
 let isRegistered = false;
 
 let allRequirmentsMet = isLegalAge && isRegistered;
-console.log("isLegalAge && isRegistered = " + allRequirmentsMet);
+console.log("isLegalAge && isRegistered = " + allRequirmentsMet); //returns false
 
 let someRequirmentsMet = isLegalAge || isRegistered;
-console.log("isLegalAge || isRegistered = " + someRequirmentsMet);
+console.log("isLegalAge || isRegistered = " + someRequirmentsMet); //returns true
 
 let someRequirmentsNotMet = !isRegistered;
-console.log("!isRegistered = " + someRequirmentsNotMet);
+console.log("!isRegistered = " + someRequirmentsNotMet); //returns true
