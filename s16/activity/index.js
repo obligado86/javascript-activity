@@ -60,14 +60,15 @@
 
 */
 	let num7 = 165;
-	let remainder1 = 165 % 8;
+	let remainder1 = num7 % 8;
 
 	console.log("The remainder of " + num7 + "devided by 8 is: " + remainder1);
 
 	//Log the value of the remainder in the console.
 	console.log("Is num7 divisible by 8?");
 	//Log the value of isDivisibleBy8 in the console.
-
+	let isDivisibleBy8 = num7 % 8; 
+	console.log(isDivisibleBy8 === 0);
 
 /*
 	4b. Given the values below, identify if the values of the following variable are divisible by 4.
@@ -81,8 +82,12 @@
 
 */
 	let num8 = 348;
+	let remainder2 = num8 % 4;
+	console.log("te remainder of " + num8 + " divided by " + 4 + " is: " +remainder2);
 	//Log the value of the remainder in the console.
 	console.log("Is num8 divisible by 4?");
+	let isDivisibleBy4 = num8 % 4;
+	console.log(isDivisibleBy4 === 0);
 	//Log the value of isDivisibleBy4 in the console.
 
 
