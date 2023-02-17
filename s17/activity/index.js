@@ -10,14 +10,16 @@
 	//first function here:
 
 function prinUserInfo() {
-	let fullName = "john Obligado";
-	let age = 18;
-	let location = "Cebu City";
-	let work = "developer";
+	let fullName = "john Doe";
+	let age = 25;
+	let location = "123 street, Quezon City";
+	let cat = "joe";
+	let dog = "Danny";
 	console.log("hello I'm " + fullName + ".");
 	console.log("I am " + age + " years old.");
-	console.log("I live in " + location + ".");
-	console.log("I work as a " + work + ".");
+	console.log("I live in " + location);
+	console.log("I have a cat named " + cat + ".");
+	console.log("I have a dog named " + dog + ".");
 }
 prinUserInfo();
 
@@ -30,7 +32,7 @@ prinUserInfo();
 	//second function here:
 
 	function printMyFiveBands() {
-		let faveBands = ["my chemecal romance", "FM static", "boys like girls", "metallica", "Queen"];
+		let faveBands = ["The Beatles", "Talor Swift", "The Eagles", "Rivermaya", "Eraserheads"];
 		console.log(faveBands[0]);
 		console.log(faveBands[1]);
 		console.log(faveBands[2]);
@@ -49,7 +51,7 @@ prinUserInfo();
 	
 	//third function here:
 	function printMyFiveMovies() {
-		let faveMovies = ["avengers", "iron man", "spider man", "john wick", "avatar"];
+		let faveMovies = ["Lion King", "Howl's Moving Castle", "Meet the Robinsons", "School of Rock", "Spirited Away"];
 		console.log(faveMovies[0]);
 		console.log(faveMovies[1]);
 		console.log(faveMovies[2]);
