@@ -17,22 +17,50 @@ console.log("hello for the other side");
 */
 
 function login(userName, password, role) {
-	if (userName == "" && password == "" && role == "") {
+	if (userName === "" || password === "" || role === "") {
 		return "input must not be empty";
 	} else if (userName == "adminUser" && role == "admin") {
-		return "Welcome back to class portal, " + role;
+		return "Welcome back to class portal, " + role + "!";
 	} else if (userName == "teacherUser" && role == "teacher") {
-		return "Thank you for loggin in, " + role;
+		return "Thank you for loggin in, " + role + "!";
 	} else if (userName == "studentUser" && role == "student") {
-		return "Welcome to the class portal, " + role;
+		return "Welcome to the class portal, " + role + "!";
 	} else {
 		return "role out of range."
 	}
 }
 
-let loginUser = login("teacherUser");
+let loginUser = login();
+console.log("login()")
 console.log(loginUser)
 
+loginUser = login("", "password", "admin");
+console.log("login(\"\", \"password\", \"admin\")");
+console.log(loginUser);
+
+loginUser = login("adminUser", "", "admin");
+console.log("login(\"adminUser\", \"\", \"admin\")");
+console.log(loginUser);
+
+loginUser = login("adminUser", "password", "");
+console.log("login(\"adminUser\", \"password\", \"\")");
+console.log(loginUser);
+
+loginUser = login("adminUser", "password", "admin");
+console.log("login(\"adminUser\", \"password\", \"admin\")");
+console.log(loginUser);
+
+loginUser = login("teacherUser", "password", "teacher");
+console.log("login(\"teacherUser\", \"password\", \"teacher\")");
+console.log(loginUser);
+
+loginUser = login("studentUser", "password", "student");
+console.log("login(\"studentUser\", \"password\", \"student\")");
+console.log(loginUser);
+
+loginUser = login("studentUser", "password", "carpenter");
+console.log("login(\"studentUser\", \"password\", \"carpenter\")");
+console.log(loginUser);
 /*
     2. Create a function called checkAverage able to receive 4 numbers as arguments calculate its average and log a message for  the user about their letter equivalent in the console.
         -add parameters appropriate to describe the arguments.
