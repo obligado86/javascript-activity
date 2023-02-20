@@ -6,16 +6,16 @@ function addNum(numA, numB){
 	let sum = numA + numB;
 	console.log(sum);
 };
-
+console.log("Displayed sum of 5 and 15");
+addNum(5, 15);
 // subtract
 
 function subNum (numC, numD){
 	let sub = numC - numD;
 	console.log(sub);
 }
-
-subNum(8, 3);
-addNum(5, 3);
+console.log("Displayed difference of 20 and 5");
+subNum(20, 5);
 
 // multiply
 
@@ -31,18 +31,20 @@ function divideNum (numG, numH){
 	return divide;
 }
 
-let product = multiplyNum(6, 6);
-let quotient = divideNum(10, 2);
-
+let product = multiplyNum(50, 10);
+let quotient = divideNum(50, 10);
+console.log("The product of 50 and 10")
 console.log(product);
+console.log("The qoutient of 50 and 10")
 console.log(quotient);
 
 function getCircleArea(radius){
 	let area = 3.141592653589793238 * radius ** 2;
-	return area;
+	return area.toFixed(2);
 }
 
-let circleArea =  getCircleArea(50);
+let circleArea =  getCircleArea(15);
+console.log("The result of getting the area of a circle with 15 radius:")
 console.log(circleArea)
 
 
@@ -51,8 +53,19 @@ function getAverage(a, b, c, d){
 	return average;
 }
 
-let avarageVar = getAverage(83, 82, 81, 80);
+let avarageVar = getAverage(20, 40, 60, 80);
+console.log("The Average of 20, 40, 60 and 80")
 console.log(avarageVar);
+
+function checkIfPassed(score, total){
+	let percentage = (score / total) * 100;
+	let isPassed = percentage >= 75;
+	return isPassed;
+}
+
+let scores = checkIfPassed(38, 50);
+console.log("is 38/50 a passing score?")
+console.log(scores);
 
 
 
