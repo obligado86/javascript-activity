@@ -1,4 +1,4 @@
-console.log("hello for the other side");
+// console.log("hello for the other side");
 
 /*
     
@@ -17,7 +17,7 @@ console.log("hello for the other side");
 */
 
 function login(userName, password, role) {
-	if (userName === "" || password === "" || role === "") {
+	if (userName === undefined || userName === "" || password === undefined || password === "" || role === undefined || role === "") {
 		return "input must not be empty";
 	} else if (userName == "adminUser" && role == "admin") {
 		return "Welcome back to class portal, " + role + "!";
@@ -92,8 +92,50 @@ console.log(loginUser);
 
     Note: strictly follow the instructed function names.
 */
+function checkAverage(a, b, c, d){
+	let total = a + b + c + d;
+	let average = total / 4;
+	if (Math.round(average) <= 75) {
+		return "Hello, student, your average is " + Math.round(average) + ". The letter equivalent is F";
+	} else if (Math.round(average) >= 75 && Math.round(average) <= 79) {
+		return "Hello, student, your average is " + Math.round(average) + ". The letter equivalent is D"	
+	} else if (Math.round(average) >= 80 && Math.round(average) <= 84) {
+		return "Hello, student, your average is " + Math.round(average) + ". The letter equivalent is C"	
+	} else if (Math.round(average) >= 85 && Math.round(average) <= 89) {
+		return "Hello, student, your average is " + Math.round(average) + ". The letter equivalent is B"	
+	} else if (Math.round(average) >= 90 && Math.round(average) <= 95) {
+		return "Hello, student, your average is " + Math.round(average) + ". The letter equivalent is A"	
+	} else if (Math.round(average) >= 96) {
+		return "Hello, student, your average is " + Math.round(average) + ". The letter equivalent is A+"	
+	} else {
+		return "your grades are not yet computed";
+	}
+}
 
 
+let scores = checkAverage(71, 70, 73, 71);
+console.log("checkAverage(71,70,73,71)");
+console.log(scores);
+
+scores = checkAverage(75, 75, 76, 78);
+console.log("checkAverage(75,75,76,78)");
+console.log(scores);
+
+scores = checkAverage(80, 82, 83, 81);
+console.log("checkAverage(80,82,83,81)");
+console.log(scores);
+
+scores = checkAverage(85, 86, 85, 86);
+console.log("checkAverage(85,86,85,86)");
+console.log(scores);
+
+scores = checkAverage(91, 90, 92, 90);
+console.log("checkAverage(91,90,92,90)");
+console.log(scores);
+
+scores = checkAverage(95, 96, 97, 96);
+console.log("checkAverage(95,96,97,96)");
+console.log(scores);
 
 //Do not modify
 //For exporting to test.js
