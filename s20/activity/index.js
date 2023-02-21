@@ -29,7 +29,7 @@ function printNumbers(num) {
 			console.log("the number is devisibleby 10. Skipping the number.")
 			continue;
 		}
-		
+
 		if(count % 5 === 0){
 			console.log(count)
 			continue
@@ -43,10 +43,21 @@ console.log(printNumbers(100));
 //Objective 2
 let string = 'supercalifragilisticexpialidocious';
 console.log(string);
-let filteredString = '';
+let filteredString = "";
 
 //Add code here
-
+for (filteredString = 0; filteredString < string.length; filteredString++){
+	if(
+		string[filteredString] == "a" ||
+		string[filteredString] == "e" ||
+		string[filteredString] == "i" ||
+		string[filteredString] == "o" ||
+		string[filteredString] == "u"
+		){
+	} else {
+		console.log(string[filteredString]);
+	} 
+}
 
 
 
