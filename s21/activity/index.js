@@ -46,13 +46,16 @@ console.log(itemFound);
 
 */
 
+
 function deleteItem() {
-	console.log(users[users.length - 1]);
+	deletedItem = users[users.length - 1];
 	return users.length = users.length-1;
 }
 
-let deleteLastUser = deleteItem();
-console.log(deleteLastUser);
+let deletedItem;
+
+deleteItem();
+console.log(deletedItem);
 console.log(users);
 
 /*
@@ -65,8 +68,11 @@ console.log(users);
 
 */
 
-
-
+function updateItemByIndex(update, indexNumber){
+	users[indexNumber] = update;
+}
+updateItemByIndex("Triple H", 3);
+console.log(users);
 
 /*
     5. Create function which is able to delete all items in the array.
@@ -75,7 +81,15 @@ console.log(users);
 
 */
 
-
+function deleteAll(){
+	for(let i = users.length; i > 0; i--){
+		if(i > 0){
+			users.length--
+		}
+	}
+}
+deleteAll();
+console.log(users);
 
 
 /*
@@ -87,6 +101,17 @@ console.log(users);
         -log the isUsersEmpty variable in the console.
 
 */
+
+function isEmpty(){
+	if (users.length > 0){
+		return false;
+	} else {
+		return true;
+	}
+}
+
+let isUsersEmpty = isEmpty();
+console.log(isUsersEmpty)
 
 try {
    module.exports = {
