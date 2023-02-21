@@ -249,6 +249,7 @@ function showIntensityAlert(windspeed){
 		console.log(typeof error);
 		console.warn(error.message);
 	} finally {
+		//continue the excecution of the code regardless of the success and failure of the code excecution in the "try" block to handle/restore error.
 		alert("intensity update will show new alert.")
 	}
 }
