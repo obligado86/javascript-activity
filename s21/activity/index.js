@@ -84,7 +84,7 @@ console.log(users);
 function deleteAll(){
 	for(let i = users.length; i > 0; i--){
 		if(i > 0){
-			users.length--
+			users.length--;
 		}
 	}
 }
