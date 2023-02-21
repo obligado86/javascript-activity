@@ -134,7 +134,7 @@ for(let j = 0; j < givenName.length; j++){
 
 console.log("==============continue break=============");
 
-for (let = 0; count <= 20; count++){
+for (count = 0; count <= 20; count++){
 	if(count % 2 === 0){
 		continue;
 	}

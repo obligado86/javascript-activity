@@ -15,17 +15,26 @@
 				//"The number is divisible by 10. Skipping the number."
 
 			// If the value is divisible by 5, print the number.
+
+
 function printNumbers(num) {
 	console.log("The number you provided is " + num);
-	for (let count = num; count >= 0; count--){
-		if(count % 10 === 0){
-			continue;
-		}
-		console.log("the number is devisibleby 10. Skipping the number.")
-
-		if(i <= 50){
+	for (let count = num; count > 0; count--){
+		if(count <= 50){
+			console.log("The current value is at " + count + ". terminating the loop")
 			break;
 		}
+
+		if(count % 10 === 0){
+			console.log("the number is devisibleby 10. Skipping the number.")
+			continue;
+		}
+		
+		if(count % 5 === 0){
+			console.log(count)
+			continue
+		}
+
 	}
 }
 
