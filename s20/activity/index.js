@@ -32,7 +32,6 @@ function printNumbers(num) {
 
 		if(count % 5 === 0){
 			console.log(count)
-			continue
 		}
 
 	}
@@ -46,19 +45,20 @@ console.log(string);
 let filteredString = "";
 
 //Add code here
-for (filteredString = 0; filteredString < string.length; filteredString++){
+for (let a = 0; a < string.length; a++){
 	if(
-		string[filteredString] == "a" ||
-		string[filteredString] == "e" ||
-		string[filteredString] == "i" ||
-		string[filteredString] == "o" ||
-		string[filteredString] == "u"
+		string[a] == "a" ||
+		string[a] == "e" ||
+		string[a] == "i" ||
+		string[a] == "o" ||
+		string[a] == "u"
 		){
+		continue
 	} else {
-		console.log(string[filteredString]);
+		filteredString += string[a];
 	} 
 }
-
+console.log(filteredString)
 
 
 
