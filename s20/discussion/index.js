@@ -52,7 +52,7 @@ console.log("=================do while loop============")
 		} while (expresion/condition)
 */
 
-/*let number = Number(prompt("give me a number"));
+let number = Number(prompt("give me a number"));
 
 do {
 	// the current value of a number is printed out
@@ -61,7 +61,7 @@ do {
 	// increses the value of number by 1 after every iteration to stop the loop it reaches 10 or greater
 	// number = number + 1
 	number += 1
-} while (number < 10)*/
+} while (number < 10)
 
 // ====================================
 console.log("==============for loop==================")
