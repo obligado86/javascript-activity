@@ -210,6 +210,7 @@ let myPokemon = {
 }
 
 console.log(myPokemon);
+console.log(myPokemon.tackle());
 
 // creating an object constructor instead wil healp with this process
 function Pokemon(name, level){
