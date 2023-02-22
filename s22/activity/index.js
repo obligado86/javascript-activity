@@ -43,7 +43,7 @@ function register(userName) {
 }
 
 //register("James Jeffries");
-register("Conan O' Brien");
+//register("Conan O' Brien");
 
 
 /*
@@ -82,7 +82,15 @@ function addFriend(foundUser) {
 
 */
     
-
+function displayFriends(){
+	if (friendsList.length === 0) {
+		return "You currently have 0 friends. Add one first."
+	} else {
+		friendsList.forEach(function(friends){
+			console.log(friends);
+		});
+	}
+}
 
 /*
     4. Create a function called displayNumberOfFriends which will display the amount of registered users in your friendsList.
@@ -94,7 +102,13 @@ function addFriend(foundUser) {
 
 */
 
-
+function displayNumberOfFriends(){
+	if (friendsList.length === 0) {
+		return "You currently have 0 friends. Add one first.";
+	} else {
+		return "You currently have " + friendsList.length + " friends.";
+	}
+}
 /*
     5. Create a function called deleteFriend which will delete the last registeredUser you have added in the friendsList.
         - If the friendsList is empty return a message:
@@ -103,6 +117,14 @@ function addFriend(foundUser) {
         - Outside the function log the friendsList array.
 
 */
+
+function deleteFriend(){
+	if (friendsList.length === 0) {
+		return "You currently have 0 friends. Add one first.";
+	} else {
+		friendsList.pop();
+	}
+}
 
 
 /*
@@ -115,7 +137,13 @@ function addFriend(foundUser) {
 */
 
 
-
+function deleteFriends(indexStart, indexEnd){
+	if (friendsList.length === 0) {
+		return "You currently have 0 friends. Add one first.";
+	} else {
+		friendsList.splice(indexStart, indexEnd);
+	}
+}
 
 
 
