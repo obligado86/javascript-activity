@@ -331,7 +331,7 @@ allTasks.forEach(function(task){
 
 
 console.log("result of for each method: ");
-console.log(filteredTask);
+//console.log(filteredTask);
 console.log(allTasks);
 
 /*
@@ -447,3 +447,57 @@ let filteredProducts = products.filter(function(product){
 });
 
 console.log(filteredProducts);
+
+
+
+// reduce
+
+/*
+	reduce()
+
+		- Evaluates elements from left to right and returns/reduces the array into a single value
+        
+        - The "accumulator" parameter in the function stores the result for every iteration of the loop
+		reduce()
+		- The "currentValue" is the current/next element in the array that is evaluated in each iteration of the loop
+        - How the "reduce" method works
+            1. The first/result element in the array is stored in the "accumulator" parameter
+            2. The second/next element in the array is stored in the "currentValue" parameter
+            3. An operation is performed on the two elements
+            4. The loop repeats step 1-3 until all elements have been worked on
+		
+		- Syntax
+            let/const resultArray = arrayName.reduce(function(accumulator, currentValue) {
+                return expression/operation
+            })
+
+
+*/
+
+// fibonacci 
+
+
+// let numbers = [1, 2, 3, 4, 5];
+
+let iteration = 0;
+
+let reducedArray = numbers.reduce(function(acc, curr){
+	console.warn(`current iteration: ${++iteration}`);
+
+	console.log(`acumulator: ${acc}`);
+	console.log(`currentValue: ${curr}`);
+
+	// operation to return/reduce the array into a single value
+	return acc + curr;
+
+});
+console.log("result for reduce() method: " + reducedArray)
+
+let list = ["hello", "batch", "253"];
+
+let reduceJoin = list.reduce(function(acc, curr){
+	/*return acc + " " + curr;*/
+	return `${acc} ${curr}`;
+});
+
+console.log(reduceJoin);
