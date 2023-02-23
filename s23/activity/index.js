@@ -4,7 +4,7 @@
 
 // Create an object called trainer using object literals
 
-let trainer = {}
+let trainer = {};
 
 // Initialize/add the given object properties and methods
 
@@ -68,31 +68,29 @@ function Pokemon(name, level){
 
 // Create/instantiate a new pokemon
 
-let mewtwo = new Pokemon("Mewtwo", 99);
-console.log(mewtwo);
+let pikachu = new Pokemon("Pikachu", 12);
+console.log(pikachu);
 
 // Create/instantiate a new pokemon
 
-let charizard = new Pokemon("Charizard", 78);
-console.log(charizard);
+let geodude = new Pokemon("Geodude", 8);
+console.log(geodude);
 
 // Create/instantiate a new pokemon
 
-let garadose = new Pokemon("Garadose", 72);
-console.log(garadose);
-
-// Invoke the tackle method and target a different object
-
-mewtwo.tackle(charizard);
-console.log(charizard);
-
-// Invoke the tackle method and target a different object
-
-garadose.tackle(mewtwo);
+let mewtwo = new Pokemon("Mewtwo", 100);
 console.log(mewtwo);
 
-mewtwo.tackle(charizard);
-console.log(charizard);
+// Invoke the tackle method and target a different object
+
+geodude.tackle(pikachu);
+console.log(pikachu);
+
+// Invoke the tackle method and target a different object
+
+mewtwo.tackle(geodude);
+console.log(geodude);
+
 
 //Do not modify
 //For exporting to test.js
