@@ -1,0 +1,38 @@
+[
+	{
+		"_id": "P00001",
+		"firstName": "John",
+		"lastName": "Doey",
+		"email": "jdoey@gmail.com",
+		"password": "doey1234",
+		"isAdmin?": true,
+		"mobileNumber": "+639123456789"
+	},
+	{
+		"_id": "P00002",
+		"firstName": "Kenny",
+		"lastName": "Gray",
+		"email": "kenny_g@gmail.com",
+		"password": "@KennG829",
+		"isAdmin?": false,
+		"mobileNumber": "+639890395894"
+	},
+	{
+		"_id": "P00003",
+		"firstName": "Jane",
+		"lastName": "Clarson",
+		"email": "jane_cs@gmail.com",
+		"password": "janeyclrk002",
+		"isAdmin?": false,
+		"mobileNumber": "+63990950380"
+	},
+	{
+		"_id": "P00004",
+		"firstName": "Kelly",
+		"lastName": "Johnson",
+		"email": "kelljnson@hotmail.com",
+		"password": "jnsonkelly",
+		"isAdmin?": false,
+		"mobileNumber": "+63999039378"
+	}
+]
