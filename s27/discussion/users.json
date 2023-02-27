@@ -1,0 +1,35 @@
+[
+	{
+		"_id": "ABC123",
+		"firstName": "John",
+		"lastName": "Doe",
+		"email": "johndoe@mail.com",
+		"password": "jandoe123",
+		"isAdmin": false,
+		"mobileNumber": "+639123456789",
+		"endrollments": ["courses100","courses123"],
+			"dateRegistered": "2023-02-27"
+	},
+	{
+		"_id": "DEF456",
+		"firstName": "Joseph",
+		"lastName": "Obligado",
+		"email": "joseph@gmail.com",
+		"password": "12345",
+		"isAdmin": true,
+		"mobileNumber": "+639987654321",
+		"endrollments": [],
+		"dateRegistered": "2023-01-27"
+	},
+	{
+		"_id": "GHF789",
+		"firstName": "Joseph",
+		"lastName": "Obligado",
+		"email": "joseph@gmail.com",
+		"password": "12345",
+		"isAdmin": true,
+		"mobileNumber": "+639987654321",
+		"endrollments": ["courses123"],
+		"dateRegistered": "2023-01-27"
+	}
+]

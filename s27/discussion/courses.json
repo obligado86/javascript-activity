@@ -1,0 +1,32 @@
+[
+	{
+		"_id": "courses100",
+		"name": "Full-Stack web Develompent",
+		"description": "Learn how to do web development using JavaScript",
+		"price": 10000,
+		"slots": 20,
+		"isActive": true,
+		"dateTimeCreated": "2022-12-12-1042AM",
+		"endroliees": ["ABC123"]
+	},
+	{
+		"_id": "courses103",
+		"name": "introduction to HTML",
+		"description": "Learn the basics and how to code",
+		"price": 3000,
+		"slots": 20,
+		"isActive": false,
+		"dateTimeCreated": "2020-01-05-1050AM",
+		"endroliees": []
+	},
+	{
+		"_id": "courses123",
+		"name": "introduction to CSS",
+		"description": "Learn the basics and how to code CSS",
+		"price": 4000,
+		"slots": 30,
+		"isActive": true,
+		"dateTimeCreated": "2022-11-15-1055AM",
+		"endroliees": ["ABC123", "GHF789"]
+	}
+]

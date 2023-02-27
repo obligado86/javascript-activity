@@ -1,0 +1,29 @@
+[
+	{
+		"_id": "PDID0001",
+		"name": "Womens Winter Sued Jacket",
+		"description": "Classic retro winter jacket for women",
+		"price": 42.99,
+		"stocks": 60,
+		"isActive": true,
+		"sku": "JKSW2904025"
+	},
+	{
+		"_id": "PDID0002",
+		"name": "Womens Summer longsleeve dress",
+		"description": "classy stylish womens dress for summer",
+		"price": 38.99,
+		"stocks": 80,
+		"isActive": true,
+		"sku": "DRLS5464097"
+	},
+	{
+		"_id": "PDID0003",
+		"name": "Womens colored retro jeans",
+		"description": "Classic retro bottom jeans for women",
+		"price": 52.99,
+		"stocks": 40,
+		"isActive": true,
+		"sku": "JRJC3405822"
+	}
+]
