@@ -47,13 +47,13 @@ db.users.find({
 			$or: [
 				{
 					"firstName": {
-						$regex: "S",
+						$regex: "s",
 						$options: '$i'
 					}
 				},
 				{
 					"lastName": {
-						$regex: "D",
+						$regex: "d",
 						$options: '$i'
 					}
 				}
@@ -93,4 +93,18 @@ db.users.find({
 
 // Code here:
 
-
+db.users.find({
+			$and: [
+				{
+					"firstName": {
+						$regex: "e",
+						$options: '$i'
+					}  
+				},
+				{
+					"age": {
+						$lte: 30
+					}
+				}
+			]
+		});
