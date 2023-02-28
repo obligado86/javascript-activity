@@ -46,13 +46,15 @@ db.fruits.count({"onSale": true});
 
 db.fruits.aggregate([
 	{$match: {"onSale": true}},
-	{$group {"_id": "$onSale", "fruitsOnSale": {$sum: "$onSale"}}},
-	{$project: {"fruitsOnSale": 1}}
+	{$count: "fruitsOnSale"},
 	]);
 
 //3. Use the count operator to count the total number of fruits with stock more than 20.
 
-db.fruits.count({})
+db.fruits.aggregate([
+	{$match: {"onSale": true}},
+	{$group: {"_id": "$supplier_id", avg_Price: {$avg: "$price"}}},
+	]);
 
 //4. Use the average operator to get the average price of fruits onSale per supplier.
 
