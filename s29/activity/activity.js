@@ -45,21 +45,27 @@ db.users.insertMany([
 
 db.users.find({
 			$or: [
-			{
-				"firstName": {
-					$regex: "s",
-					$option: "$i"
+				{
+					"firstName": {
+						$regex: "S",
+						$options: '$i'
+					}
 				},
-				{"_id": 0}
-			},
-			{
-				"lastName": {
-					$regex: "d",
-					$option: "$i"
-				},
-				{"_id": 0}
-			]
-		});
+				{
+					"lastName": {
+						$regex: "D",
+						$options: '$i'
+					}
+				}
+			],
+		},
+		{
+				"_id": 0,
+				"firstName": 1,
+				"lastName": 1,
+		}
+
+		);
 
 /*
 	2.) Find users who are from the HR department and their age is greater than or equal to 70.
@@ -68,8 +74,18 @@ db.users.find({
 
 // Code here:
 
-
-
+db.users.find({
+			$and: [
+				{
+					"department": "HR" 
+				},
+				{
+					"age": {
+						$gte: 70
+					}
+				}
+			]
+		});
 /*
 	3.) Find users with the letter e in their first name and has an age of less than or equal to 30.
 			a. Use the $and, $regex and $lte operators
