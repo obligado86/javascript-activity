@@ -52,13 +52,27 @@ db.fruits.aggregate([
 //3. Use the count operator to count the total number of fruits with stock more than 20.
 
 db.fruits.aggregate([
-	{$match: {"onSale": true}},
-	{$group: {"_id": "$supplier_id", avg_Price: {$avg: "$price"}}},
+	{$match: {"stock": {$gte: 20}}},
+	{$count: "enoughStock"},
 	]);
 
 //4. Use the average operator to get the average price of fruits onSale per supplier.
 
+db.fruits.aggregate([
+	{$match: {"onSale": true}},
+	{$group: {"_id": "$supplier_id", avg_price: {$avg: "$price"}}},
+	]);
 
 //5. Use the max operator to get the highest price of a fruit per supplier.
 
+db.fruits.aggregate([
+	{$match: {"onSale": true}},
+	{$group: {"_id": "$supplier_id", max_price: {$max: "$price"}}},
+	]);
+
 //6. Use the min operator to get the lowest price of a fruit per supplier.
+
+db.fruits.aggregate([
+	{$match: {"onSale": true}},
+	{$group: {"_id": "$supplier_id", min_price: {$min: "$price"}}},
+	]);

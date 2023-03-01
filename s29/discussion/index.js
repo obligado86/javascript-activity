@@ -358,7 +358,10 @@ db.inventory.find({
 db.inventory.find({
 		$and: [
 				{
-					"name": {$regex: "Java"}
+					"name": {
+						$regex: "java",
+						$options: '$i' // owrks also without$
+					}
 				},
 				{
 					"price": {
@@ -367,3 +370,25 @@ db.inventory.find({
 				}
 			]
 	});
+
+
+.db.inventory.updateOne(
+		{
+			"price": {
+				$gte: 3000
+			}
+		},
+		{
+			$set: {
+				"stocks": 100
+			}
+		}
+	);
+
+db.inventory.deleteOne(
+		{
+			"price": {
+				$gte: 3000
+			}
+		}
+	);

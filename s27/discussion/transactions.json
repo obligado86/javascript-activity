@@ -20,7 +20,7 @@
 		"userId": "GHF789",
 		"courseId": "courses123",
 		"isPaid": false,
-		"paymentMethod": "credit",
+		"paymentMethod": "creditCard",
 		"dateTimeEndrolled": "2023-10-27-1100AM"
 	}
 ]
