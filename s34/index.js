@@ -11,7 +11,7 @@ const express = require("express");
 const app = express();
 
 // For our application server to run, we need a port to listen to
-const port = 3000;
+const port = 4000;
 
 // Setup for allowing the server to handle data from requests
 // Allows your app to read json data
@@ -102,10 +102,16 @@ app.get("/users", (req,res) => {
 	res.send(users = [{username: "johndoe", password: "johndoe1234"}]);
 });
 
-users = [{
+users = [
+{
 	username: "johndoe",
 	password: "johndoe1234"
-}]
+},
+{
+	username: "ben",
+	password: "benbagamo"
+}
+]
 app.delete("/delete-user", (req,res) => {
 	let message;
 
@@ -125,7 +131,7 @@ app.delete("/delete-user", (req,res) => {
 		}
 	}
 	// Sends a response back to the client/Postman once the password has been updated or if a user is not found
-	res.send(message);
+	res.send(message + users);
 });
 
 
