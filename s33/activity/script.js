@@ -9,9 +9,8 @@ fetch("https://jsonplaceholder.typicode.com/todos")
 fetch("https://jsonplaceholder.typicode.com/todos")
 	.then((response) => response.json())
 	.then((json) => {
-		let i = 0
 		let titles = json.map((data) => {
-			return `${i++}: ${data.title}`;
+			return data.title;
 		});
 		console.log([titles])
 	});
