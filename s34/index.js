@@ -118,7 +118,7 @@ app.delete("/delete-user", (req,res) => {
 	for(let i = 0; i < users.length; i++){
 		// If the username provided in the client/Postman and the username of the current object in the loop is the same
 		if(req.body.username == users[i].username){
-			users.splice(users[i])
+			users.splice(users[i], 1)
 
 			message = `User ${req.body.username} has been deleted`;
 			// Breaks out of the loop once a user that matches the username provided in the client/Postman is found
