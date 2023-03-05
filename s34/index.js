@@ -94,24 +94,29 @@ app.put("/change-paswword", (req, res) => {
 	    }
 });*/
 
-app.get("/home", (req,res) => {
-	res.send("Welcome to the homepage");
-});
-
-app.get("/users", (req,res) => {
-	res.send(users = [{username: "johndoe", password: "johndoe1234"}]);
-});
-
 users = [
 {
 	username: "johndoe",
 	password: "johndoe1234"
-},
-{
-	username: "ben",
-	password: "benbagamo"
 }
 ]
+
+app.get("/home", (req,res) => {
+	res.send("Welcome to the homepage");
+});
+
+app.get("/users", (req,res) => { 
+	for(let i = 0; i < users.length; i++){
+		if (req.body.username == users[i].username) {
+			return res.send(users[i]);
+		} else {
+			return res.send("not found")
+		}	
+	}
+	
+});
+
+
 app.delete("/delete-user", (req,res) => {
 	let message;
 
@@ -131,7 +136,7 @@ app.delete("/delete-user", (req,res) => {
 		}
 	}
 	// Sends a response back to the client/Postman once the password has been updated or if a user is not found
-	res.send(message + users);
+	res.send(message);
 });
 
 

@@ -37,6 +37,11 @@ const taskSchema = new Schema({
 	}
 })
 
+const userSchema = new Schema({
+	username: String,
+	password: String
+})
+const User = mongoose.model("User", userSchema);
 // =================== models ===================
 // Uses schemas and are used to create/instantiate objects that correspond to the schema
 		// Models use Schemas and they act as the middleman from the server (JS code) to our database
@@ -93,6 +98,10 @@ app.post("/task", (req, res) => {
 				}
 			});*/
 
+			//.then and .catch chain:
+			//.then() is used to handle the proper result/returned value of a function. If the function properly returns a value, we can run a separate function to handle it.
+			//.catch() is used to handle/catch the error from the use of a function. So that if there is an error, we can properly handle it separate from the result.
+
 			newTask.save()
 				.then(result => res.send(result))
 				.catch(error => res.send(error));
@@ -100,10 +109,40 @@ app.post("/task", (req, res) => {
 	}).catch(error => res.send(error));
 })
 
+
 app.get("/task", (req, res) => {
 	Task.find({})
 	.then(result => res.send(result))
 	.catch(error => res.send(error))
+});
+
+
+/*app.post("/signup", (req, res) => {
+	const { body } = req;
+	console.log(body)
+	User.create(body).then(result => res.send("user added"));
+	/*User.findone({username: req.body.username, req.b})
+	.then(result => res.send(result))
+	.catch(error => res.send(error))
+});*/
+
+app.post("/signup", (req, res) => {
+  const { username, password } = req.body;
+
+  //check if duplicate
+  //!username = not username or username === null or fals undefined
+  User.findOne({ username, password })
+    .then((result) => {
+      if ((req.body.username === "" || req.body.username === undefined) || (req.body.password === "" || req.body.password === undefined)) {
+          return res.send(400, "BOTH username and Password must be provided.");
+      } else if (result) {
+        return res.send(400, "Duplicate found");
+      } else {
+        User.create({ username, password });
+        return res.send(201, "New user registered");
+      }
+    })
+    .catch((error) => res.send(error));
 });
 
 

@@ -193,7 +193,8 @@ db.courses.updateMany(
 		}
 	);
 
-db.courses.updateMany(
+//update many
+db.users.updateMany(
 		{},
 		{
 			$rename:{
@@ -201,3 +202,36 @@ db.courses.updateMany(
 			}
 		}
 	);
+
+//remove field
+db.users.updateOne(
+		{
+			"firstName": "Bill"
+		},
+		{
+			$unset: {
+				"status": "active"
+			}
+		}
+	);
+
+// deleting documents
+
+/*
+	syntax:
+		deleting one document:
+			db.collectionName.deleteOne({"criteria": "value"})
+		
+		deleting multiple documents:
+			db.collectionName.deleteMany({"criteria": "value"});
+*/
+
+db.users.deleteOne({
+	"company": "Microsoft"
+	});
+
+db.users.deleteMany({
+	"dept": "none"
+	});
+
+db.users.deleteMany({});
