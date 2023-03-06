@@ -136,7 +136,7 @@ app.post("/signup", (req, res) => {
       if ((req.body.username === "" || req.body.username === undefined) || (req.body.password === "" || req.body.password === undefined)) {
           return res.send(400, "BOTH username and Password must be provided.");
       } else if (result) {
-        return res.send(400, "Duplicate found");
+        return res.send(400, "Duplicate username found");
       } else {
         User.create({ username, password });
         return res.send(201, "New user registered");
