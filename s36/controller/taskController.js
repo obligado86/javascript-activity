@@ -60,16 +60,16 @@ module.exports.updateStatus = (taskId, newStatus) => {
 	return Task.findById(taskId).then((result, err) => {
 		if(err){
 			console.log(err);
-			return err;
+			return false;
 		}
-		result.status = newStatus.status;
+		result.status = "complete";
 
 		return result.save().then((updatedTask, saveErr) => {
 			if(saveErr) {
 				console.log(saveErr);
 				return false
 			} else {
-				return updatedTask
+				return updatedTask;
 			}
 		})
 	})

@@ -42,11 +42,11 @@ router.put("/:id", (req, res) => {
 	taskController.updateTask(req.params.id, req.body).then(resultFromController => res.send(resultFromController));
 })
 
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
 	taskController.getSpecificTask(req.params.id).then(resultFromController => res.send(resultFromController));
 });
 
-router.put("/:id", (req, res) => {
+router.put("/:id/complete", (req, res) => {
 	taskController.updateStatus(req.params.id, req.body).then(resultFromController => res.send(resultFromController));
 });
 
