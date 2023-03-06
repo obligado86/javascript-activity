@@ -59,9 +59,8 @@ app.post("/signup", (req, res) => {
 
 app.put("/change-paswword", (req, res) => {
 	let message;
-
 	for(let i = 0; i < users.length; i++){
-		// If the username provided in the client/Postman and the username of the current object in the loop is the same
+	// If the username provided in the client/Postman and the username of the current object in the loop is the same
 		if(req.body.username == users[i].username){
 			users[i].password == req.body.password;
 
@@ -106,33 +105,38 @@ app.get("/home", (req,res) => {
 });
 
 app.get("/users", (req,res) => { 
-	for(let i = 0; i < users.length; i++){
-		if (req.body.username == users[i].username) {
+	if (users.length === 0){
+		message = "no user found";
+	} else {
+		for(let i = 0; i < users.length; i++){
+			if (req.body.username == users[i].username) {
 			return res.send(users[i]);
-		} else {
-			return res.send("not found")
-		}	
+			} else {
+				return res.send("not found")
+			}	
+		}
 	}
-	
 });
 
 
 app.delete("/delete-user", (req,res) => {
 	let message;
+	if (users.length === 0){
+		message = "no user found";
+	} else {
+		for(let i = 0; i < users.length; i++){
+			// If the username provided in the client/Postman and the username of the current object in the loop is the same
+			if(req.body.username == users[i].username){
+				users.splice(users[i], 1)
 
-	for(let i = 0; i < users.length; i++){
-		// If the username provided in the client/Postman and the username of the current object in the loop is the same
-		if(req.body.username == users[i].username){
-			users.splice(users[i], 1)
-
-			message = `User ${req.body.username} has been deleted`;
-			// Breaks out of the loop once a user that matches the username provided in the client/Postman is found
-			break;
-		} else if(req.body.username == "") {
+				message = `User ${req.body.username} has been deleted`;
+				// Breaks out of the loop once a user that matches the username provided in the client/Postman is found
+				break;
+			} 
+			if(req.body.username != users[i].username) {
 			// Changes the message to be sent back by the response
-			message = "User does not exist."
-		} else {
-			message = "No user found."
+				message = "User does not exist."
+			}
 		}
 	}
 	// Sends a response back to the client/Postman once the password has been updated or if a user is not found
