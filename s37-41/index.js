@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors")
+const cors = require("cors");
+
+const userRoute = require("./routes/userRoute");
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -15,6 +17,8 @@ db.once("open", () => console.log("now connected to mongodb atlas."))
 
 app.use(express.json());
 app.use(express.urlencoded({extend: true}));
+// Defines the "/users" string to be included for all user routes defined in the "user" route file
+app.use("/users", userRoute);
 
 if(require.main === module){
 	app.listen(port, () => {
