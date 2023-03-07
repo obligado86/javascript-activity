@@ -1,16 +1,20 @@
 const Course = require("../models/Course");
+const auth = require("../auth");
 // Create a new course
 		/*
 			Steps:
 			1. Create a new Course object using the mongoose model and the information from the request body and the id from the header
 			2. Save the new Course to the database
 		*/
-module.exports.addCourse = (reqBody) => {
-	let newCourse = new Course({
+module.exports.addCourse = (reqBody, isAdmin) => {
+	if(isAdmin === true) {
+		let newCourse = new Course({
 		name: reqBody.name,
 		description: reqBody.description,
 		price: reqBody.price
-	});
-
-	return newCourse.save().then(course => true).catch(err => false);
+		});
+		return newCourse.save().then(course => true).catch(err => false)
+	} else {
+		return Promise.reject("Not Admin");
+	}
 }
