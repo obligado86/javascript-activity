@@ -5,7 +5,7 @@ const courseSchema = new mongoose.Schema({
 		type : String,
 		required : [true, "Course is required"]
 	},
-	decription : {
+	description : {
 		type : String,
 		required : [true, "course discription is required"]
 	},

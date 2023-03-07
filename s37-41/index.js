@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const userRoute = require("./routes/userRoute");
+const courseRoute = require("./routes/courseRoute");
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -19,9 +20,13 @@ app.use(express.json());
 app.use(express.urlencoded({extend: true}));
 // Defines the "/users" string to be included for all user routes defined in the "user" route file
 app.use("/users", userRoute);
+// Defines the "/courses" string to be included for all course routes defined in the "course" route file
+app.use("/courses", courseRoute);
 
 if(require.main === module){
 	app.listen(port, () => {
 		console.log(`api is now online on port ${port}`)
 	});
 }
+
+module.exports = app;

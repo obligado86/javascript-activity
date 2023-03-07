@@ -79,23 +79,11 @@ module.exports.loginUser = (reqBody) => {
 	}).catch(err => err);
 };
 
-module.exports.getProfile = (reqBody) => {
-	return User.findById(reqBody.id).then(result => {
-		if(!result){
-			return false;
-		} else {
-			let userDetails = {
-				"_id": result._id,
-				"firstName": result.firstName,
-				"lastName": result.lastName,
-				"email": result.email,
-				"password": "",
-				"isAdmin": result.isAdmin,
-				"mobileNo": result.mobileNo,
-				"enrollments": result.enrollments,
-				"__v": result.__v
-			}
-			return userDetails;
-		}
-	}).catch(err => err);
-};
+module.exports.getProfile = (data) => {
+
+	return User.findById(data.userId).then(result => {
+
+		result.password = "";
+		return result;
+	}) .catch(err => err);
+}
