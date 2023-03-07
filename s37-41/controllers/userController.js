@@ -80,7 +80,7 @@ module.exports.loginUser = (reqBody) => {
 };
 
 module.exports.getProfile = (reqBody) => {
-	return User.findById({id: reqBody._id}).then(result => {
+	return User.findOne({id: reqBody._id}).then(result => {
 		if(!result){
 			return false;
 		} else {
@@ -98,4 +98,4 @@ module.exports.getProfile = (reqBody) => {
 			return userDetails;
 		}
 	}).catch(err => err);
-}
+};
