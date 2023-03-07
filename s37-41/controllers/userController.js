@@ -92,8 +92,10 @@ module.exports.getProfile = (reqBody) => {
 				"password": "",
 				"isAdmin": result.isAdmin,
 				"mobileNo": result.mobileNo,
-				"enrollments": result.enrollments
+				"enrollments": result.enrollments,
+				"__v": result.__v
 			}
+			return userDetails;
 		}
 	}).catch(err => err);
 }
