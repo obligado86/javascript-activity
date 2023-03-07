@@ -7,14 +7,14 @@ const auth = require("../auth");
 			2. Save the new Course to the database
 		*/
 module.exports.addCourse = (reqBody, isAdmin) => {
-	if(isAdmin === true) {
+	if(!isAdmin) {
+		return Promise.reject("Not Admin");
+	} else {
 		let newCourse = new Course({
 		name: reqBody.name,
 		description: reqBody.description,
 		price: reqBody.price
 		});
-		return newCourse.save().then(course => true).catch(err => false)
-	} else {
-		return Promise.reject("Not Admin");
+		return newCourse.save().then(course => true).catch(err => err);
 	}
 }

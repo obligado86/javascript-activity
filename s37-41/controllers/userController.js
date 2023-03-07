@@ -36,7 +36,6 @@ module.exports.registerUser = (reqBody) => {
 		lastName: reqBody.lastName,
 		email: reqBody.email,
 		mobileNo: reqBody.mobileNo,
-		isAdmin: reqBody.isAdmin,
 		// 10 is the value provided as the number of "salt" rounds that the bcrypt algorithm will run in order to encrypt the password
 		password: bcrypt.hashSync(reqBody.password, 10)
 	});
