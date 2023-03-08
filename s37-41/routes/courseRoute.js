@@ -47,7 +47,7 @@ router.put("/:courseId", auth.verify, (req, res) => {
 		*/
 		// Information to update a course will be coming from both the URL parameters and the request body
 
-router.patch("/:courseId", auth.verify, (req, res) => {
+router.patch("/:courseId/archive", auth.verify, (req, res) => {
 	const verifyAdmin = auth.decode(req.headers.authorization);
 	if(verifyAdmin.isAdmin){
 		courseController.archiveCourse(req.params, req.body).then(resultFromController => res.send(resultFromController))

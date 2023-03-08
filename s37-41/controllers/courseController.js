@@ -42,9 +42,9 @@ module.exports.updateCourse = (reqParams, reqBody) => {
 	return Course.findByIdAndUpdate(reqParams.courseId, updateCourse).then(course => true).catch(err => err);
 };
 
-module.exports.archiveCourse = (reqParams, reqBody) => {
+module.exports.archiveCourse = (reqParams) => {
 	let archiveCourse = {
-		isActive: reqBody.isActive
+		isActive: false
 	}
 	return Course.findByIdAndUpdate(reqParams.courseId, archiveCourse).then(course => true).catch(err => err);
 }
