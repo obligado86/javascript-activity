@@ -32,7 +32,7 @@ router.post("/enroll", auth.verify, (req, res) => {
 		courseId: req.body.courseId
 	}
 	const verifyAdmin = auth.decode(req.headers.authorization);
-	if(verifyAdmin){
+	if(verifyAdmin.isAdmin){
 		res.send(false);
 	} else {
 		userController.enroll(data).then(resultFromController => res.send(resultFromController)).catch(err => res.send(err));
