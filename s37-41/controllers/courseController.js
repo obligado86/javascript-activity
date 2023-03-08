@@ -8,7 +8,7 @@ const auth = require("../auth");
 		*/
 module.exports.addCourse = (reqBody, isAdmin) => {
 	if(!isAdmin) {
-		return Promise.reject("Not Admin");
+		return Promise.reject(false);
 	} else {
 		let newCourse = new Course({
 		name: reqBody.name,
@@ -17,4 +17,31 @@ module.exports.addCourse = (reqBody, isAdmin) => {
 		});
 		return newCourse.save().then(course => true).catch(err => err);
 	}
+}
+
+module.exports.getAllCourses = () => {
+	return Course.find({}).then(result => result).catch(err => err);
+};
+
+module.exports.getAllActive = () => {
+	return Course.find({isActive: true}).then(result => result).catch(err => err);
+};
+
+module.exports.getCourse = (reqParams) => {
+	return Course.findById(reqParams.courseId).then(result => {
+		return result
+	}).catch(err => err);
+};
+
+module.exports.updateCourse = (reqParams, reqBody) => {
+	let updateCourse = {
+		name: reqBody.name,
+		description: reqBody.description,
+		price: reqBody.price
+	};
+	return Course.findByIdAndUpdate(reqParams.courseId, updateCourse).then(course => true).catch(err => err);
+};
+
+module.exports.archiveCourse = (reqParams, reqBody) => {
+	return Course.findByIdAndUpdate(reqParams.courseId, reqBody).then(course => true).catch(err => err);
 }

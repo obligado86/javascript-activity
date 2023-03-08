@@ -142,7 +142,7 @@ app.post("/signup", (req, res) => {
         return res.send(201, "New user registered");
       }
     })
-    .catch((error) => res.send(error));
+    .catch((error) => res.send(404, error));
 });
 
 
