@@ -21,13 +21,13 @@ const courseSchema = new mongoose.Schema({
 		type : Date,
 		default : new Date()
 	},
-	endrollees : [
+	enrollees : [
 		{
 			userId : {
 				type : String,
 				required : [true, "UserId is required"]
 			},
-			endrolledon : {
+			enrolledOn : {
 				type: Date,
 				default: new Date()
 			}

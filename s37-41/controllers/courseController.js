@@ -47,4 +47,12 @@ module.exports.archiveCourse = (reqParams) => {
 		isActive: false
 	}
 	return Course.findByIdAndUpdate(reqParams.courseId, archiveCourse).then(course => true).catch(err => err);
-}
+};
+
+// Archive a course
+// In managing databases, it's common practice to soft delete our records and what we would implement in the "delete" operation of our application
+// The "soft delete" happens here by simply updating the course "isActive" status into "false" which will no longer be displayed in the frontend application whenever all active courses are retrieved
+// This allows us access to these records for future use and hides them away from users in our frontend application
+
+// There are instances where hard deleting records is required to maintain the records and clean our databases
+// The use of "hard delete" refers to removing records from our database permanently

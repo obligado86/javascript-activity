@@ -1,5 +1,6 @@
 // The "User" variable is defined using a capitalized letter to indicate that what we are using is the "User" model for code readability
 const User = require("../models/User");
+const Course = require("../models/Course");
 const auth = require("../auth");
 const bcrypt = require("bcrypt");
 // Check if the email already exists
@@ -85,5 +86,23 @@ module.exports.getProfile = (data) => {
 
 		result.password = "";
 		return result;
-	}) .catch(err => err);
+	}).catch(err => err);
+}
+
+//endroll
+
+module.exports.enroll = async (data) => {
+	let isUserUpdated = await User.findById(data.userId).then(user => {
+		user.enrollments.push({courseId: data.courseId});
+		return user.save().then(user => true).catch(err => false)
+	});
+	let isCourseUpdated = await Course.findById(data.courseId).then(course => {
+		course.enrollees.push({userId: data.userId})
+		return course.save().then(course => true).catch(err => false);
+	});
+	if(isUserUpdated && isCourseUpdated){
+		return true;
+	} else {
+		return false;
+	}
 }
